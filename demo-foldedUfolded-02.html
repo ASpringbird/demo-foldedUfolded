@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>展开与收起效果-02</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#main {
+			width: 600px;
+			margin: 0 auto;
+			background: #eee;
+			font-size: 13px;
+			padding: 20px 15px;
+		}
+		ul li {
+			list-style: none;
+			line-height: 30px;
+		}
+		#hide-box {
+			display: none;
+		}
+		
+		.slide {
+            width: 600px;
+            border-top: solid 4px gray;
+            margin: 0 auto;
+        }
+        .btn-slide {
+            background: gray;
+            text-align: center;
+            width: 120px;
+            height: 40px;
+            border: none;
+            font-size: 15px;
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+	</style>
+	<script src="jquery/jquery-3.0.0.min.js"></script>
+	<script>
+	
+		$(document).ready(function() {
+			$(".btn-slide").click(function() {
+				$("#hide-box").slideToggle("300");
+			})
+		})
+		
+	</script>
+</head>
+<body>
+	<div id="main">
+		<ul>
+			<li>手机 - 商品筛选</li>
+			<li>网络： 移动4G（TD-LTE ） 联通4G（TD-LTE） 联通3G（WCDMA）</li>
+		</ul>
+		<ul id="hide-box">
+			<li>价格： 5000以上 4000-4999 3000-3999 2000-2999</li>
+			<li>特点： JDPhone计划 "0"元购机 防水 长待机 1080P全高清屏</li>
+			<li>价格： 5000以上 4000-4999 3000-3999 2000-2999</li>
+			<li>价格： 5000以上 4000-4999 3000-3999 2000-2999</li>
+		</ul>
+	</div>
+	<p class="slide">
+		<button id="btnSlide" class="btn-slide">更多选项 + </button>
+	</p>
+</body>
+</html>

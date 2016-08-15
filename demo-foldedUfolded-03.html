@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动展开</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#showBox {
+		width: 600px;
+		background: #eee;
+		margin: 0 auto;
+		padding: 15px;
+		font-size: 12px;
+		text-align: center;
+		overflow: hidden;
+	}
+	.slide {
+		width: 630px;
+		border-top: 4px solid gray;
+		margin: 0 auto;
+	}
+	.btn-slide {
+		height: 40px;
+		line-height: 40px;
+		background: gray;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
+		display: block;
+		margin: 0 auto;
+		font-size: 20px;
+	}
+</style>
+<script src="jquery/jquery-3.0.0.min.js"></script>
+<script>
+	var h = 0;
+	function addH() {
+		if(h < 300) {
+			h += 5;
+			document.getElementById('showBox').style.height = h + "px";
+		}
+		else {
+			return;
+		}
+		setTimeout("addH()",30);
+	}
+
+	function subH() {
+		if(h > 0) {
+			h -= 5;
+			document.getElementById('showBox').style.height = h + "px";
+		}
+		else {
+			document.getElementById('showBox').style.display = "none";
+			return;
+		}
+		setTimeout("subH()",30);
+	}
+
+	window.onload = function showAds() {	
+		addH();
+		setTimeout("subH()",5000);
+	}
+</script>
+<body>
+	<div>
+		<div id="showBox">
+			<h1>欢迎来到xx网</h1>
+		</div>
+		<p class="slide"><a href="#" id="btnSlide" class="btn-slide">xx网欢迎你</a></p>
+	</div>
+</body>
+</html>
